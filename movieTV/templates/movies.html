@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="row">
+        <h3>Trending Movies</h3>
+        <div class="multiple-items">
+            <div>
+                <a href="#" class="d-inline-block position-relative stretched-link">
+                    <img src="https://picsum.photos/300/200?random=1">
+                </a>
+            </div>
+            <div><img src="https://picsum.photos/300/200?random=2"></div>
+            <div><img src="https://picsum.photos/300/200?random=3"></div>
+            <div><img src="https://picsum.photos/300/200?random=4"></div>
+            <div><img src="https://picsum.photos/300/200?random=5"></div>
+            <div><img src="https://picsum.photos/300/200?random=6"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <h3>New Movies</h3>
+        <div class="multiple-items">
+            <div><img src="https://picsum.photos/300/200?random=7"></div>
+            <div><img src="https://picsum.photos/300/200?random=8"></div>
+            <div><img src="https://picsum.photos/300/200?random=9"></div>
+            <div><img src="https://picsum.photos/300/200?random=10"></div>
+            <div><img src="https://picsum.photos/300/200?random=11"></div>
+            <div><img src="https://picsum.photos/300/200?random=12"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="multiple-items">
+            {% for film in films %}
+                <div>
+                    <a href="#" class="d-inline-block position-relative stretched-link">
+                        <img src="{{ film.backdrop }}">
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}

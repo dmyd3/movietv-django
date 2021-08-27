@@ -1,0 +1,109 @@
+/* Shrinking the sidebar from 250px to 80px and center aligining its content*/
+#sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    z-index: 1010;
+}
+#sidebar.shrunken {    
+    width: 100px;
+    text-align: center;
+}
+#sidebar ul li a {
+    text-align: left;
+}
+
+#sidebar.shrunken a span {
+    display: none;
+}
+#sidebar.shrunken a{
+    align-self: center;
+}
+
+#sidebar.shrunken ul li a {
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 0.85em;
+    /* Hide the text. */
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#sidebar.shrunken ul li a i {
+    margin-right:  0;
+    display: block;
+    font-size: 1.8em;
+}
+
+/* Same dropdown links padding*/
+#sidebar.shrunken ul ul a {
+    padding: 10px !important;
+}
+
+/* Changing the arrow position to bottom center position, 
+   translateX(50%) works with right: 50% 
+   to accurately  center the arrow */
+#sidebar.shrunken .dropdown-toggle::after {
+    top: auto;
+    bottom: 10px;
+    right: 50%;
+    -webkit-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    transform: translateX(50%);
+}
+
+#sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+@media screen and (max-width: 700px) {
+    #sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        /* margin-left: 0; */
+    }
+    #sidebar a {float: left;}
+    /* 80px and its content aligned to centre. Pushing it off the screen with the
+       negative left margin
+    */
+    #sidebar.shrunken {        
+        width: 100% !important;
+        text-align: center;
+        /* margin-left: -100px !important; */
+    }
+    #sidebar ul{ flex-direction:row !important; }
+    /* Downsize the navigation links font size */
+    #sidebar.shrunken ul li a {
+        padding: 20px 10px;
+        font-size: 0.85em;
+    }
+
+    #sidebar.shrunken ul li a i {
+        margin-right:  0;
+        display: block;
+        font-size: 1.8em;
+        margin-bottom: 5px;
+    }
+
+    /* Adjust the dropdown links padding*/
+    #sidebar.shrunken ul ul a {
+        padding: 10px !important;
+    }
+
+    /* Changing the arrow position to bottom center position, 
+      translateX(50%) works with right: 50% 
+      to accurately  center the arrow */
+    .dropdown-toggle::after {
+        top: auto;
+        bottom: 10px;
+        right: 50%;
+        -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        transform: translateX(50%);
+    }
+}
