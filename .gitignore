@@ -136,3 +136,5 @@ __pycache__/
 .vscode
 .idea
 .DS_Store
+env.js
+_env.py

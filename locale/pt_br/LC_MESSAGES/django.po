@@ -1,0 +1,116 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-31 00:54-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: movieTV/apps/core_app/models.py:20 movieTV/templates/base.html:99
+msgid "Movies"
+msgstr "Filmes"
+
+#: movieTV/apps/core_app/models.py:21
+msgid "Movies Watched"
+msgstr "Filmes Assistidos"
+
+#: movieTV/apps/core_app/models.py:22
+msgid "Movies that the user have watched"
+msgstr "Filmes que o usuário assistiu"
+
+#: movieTV/apps/core_app/models.py:27
+msgid "TV Shows"
+msgstr "Séries de TV"
+
+#: movieTV/apps/core_app/models.py:28
+msgid "Shows Watched"
+msgstr "Séries Assistidas"
+
+#: movieTV/apps/core_app/models.py:29
+msgid "Shows that the user have watched"
+msgstr "Séries que o usuário assistiu"
+
+#: movieTV/apps/core_app/models.py:36
+msgid "groups"
+msgstr ""
+
+#: movieTV/apps/core_app/models.py:39
+msgid ""
+"The groups this user belongs to. A user will get all permissions granted to "
+"each of their groups."
+msgstr ""
+
+#: movieTV/apps/core_app/models.py:47
+msgid "user permissions"
+msgstr ""
+
+#: movieTV/apps/core_app/models.py:49
+msgid "Specific permissions for this user."
+msgstr ""
+
+#: movieTV/settings.py:132
+msgid "English"
+msgstr "Inglês"
+
+#: movieTV/settings.py:133
+msgid "Portuguse-Brazil"
+msgstr "Português-Brasil"
+
+#: movieTV/templates/base.html:61
+msgid "Login"
+msgstr ""
+
+#: movieTV/templates/base.html:62
+msgid "Sign-up"
+msgstr "Cadastrar"
+
+#: movieTV/templates/base.html:70
+msgid "Settings"
+msgstr "Configurações"
+
+#: movieTV/templates/base.html:71
+msgid "Profile"
+msgstr "Perfil"
+
+#: movieTV/templates/base.html:73
+msgid "Sign out"
+msgstr "Sair"
+
+#: movieTV/templates/base.html:105
+msgid "TV Series"
+msgstr "Séries de TV"
+
+#: movieTV/templates/base.html:111
+msgid "Search"
+msgstr "Procurar"
+
+#: movieTV/templates/movies.html:23
+msgid "Trending Movies"
+msgstr "Filmes em Tendência"
+
+#: movieTV/templates/movies.html:36
+msgid "Popular Movies"
+msgstr "Filmes Populares"
+
+#: movieTV/templates/movies.html:49
+msgid "Popular Streaming Movies"
+msgstr "Filmes Populares no Streaming"
+
+#: movieTV/templates/movies.html:62
+msgid "Popular Cinema Movies"
+msgstr "Popular no Cinema"
+
+#: movieTV/templates/movies.html:75
+msgid "Top Rated Movies"
+msgstr "Filmes com as Maiores Notas"

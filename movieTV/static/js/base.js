@@ -5,8 +5,8 @@ $(document).ready(function () {
 
     $('.multiple-items').slick({
         infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
+        slidesToShow: 5,
+        slidesToScroll: 4,
         dots: true,
         //appendArrows:$('#ex1'),
         prevArrow:'<button type="button" class="slick-prev">\

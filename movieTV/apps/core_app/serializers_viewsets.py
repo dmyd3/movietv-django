@@ -4,7 +4,7 @@ Django Rest Framework functions
 Serializers and Viewsets for each model
 """
 from rest_framework import serializers, viewsets
-from .models import WebUser
+from core_app.models import WebUser
 
 
 # Serializers define the API representation.
