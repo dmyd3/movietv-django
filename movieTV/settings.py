@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'widget_tweaks',
 ]
 
 MY_APPS = [
@@ -122,6 +123,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Custom Django auth settings
+
+AUTH_USER_MODEL = 'core_app.User'
+
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'core_app:home_page'
+LOGOUT_REDIRECT_URL = 'core_app:home_page'
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/

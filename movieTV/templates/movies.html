@@ -25,7 +25,7 @@
         <div class="multiple-items">
             {% for film in trending %}
                 <div>
-                    <a href="movies/{{ film.id }}" class="d-inline-block position-relative stretched-link">
+                    <a href="{{ film.id }}" class="d-inline-block position-relative stretched-link">
                         <img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{ film.poster_path }}">
                     </a>
                 </div>
@@ -38,7 +38,7 @@
         <div class="multiple-items">
             {% for film in popular %}
                 <div>
-                    <a href="movies/{{ film.id }}" class="d-inline-block position-relative stretched-link">
+                    <a href="{{ film.id }}" class="d-inline-block position-relative stretched-link">
                         <img src="https://image.tmdb.org/t/p/w185/{{ film.poster_path }}">
                     </a>
                 </div>
@@ -51,7 +51,7 @@
         <div class="multiple-items">
             {% for film in streaming_popular %}
                 <div>
-                    <a href="movies/{{ film.id }}" class="d-inline-block position-relative stretched-link">
+                    <a href="{{ film.id }}" class="d-inline-block position-relative stretched-link">
                         <img src="https://image.tmdb.org/t/p/w185/{{ film.poster_path }}">
                     </a>
                 </div>
@@ -64,7 +64,7 @@
         <div class="multiple-items">
             {% for film in theatre %}
                 <div>
-                    <a href="movies/{{ film.id }}" class="d-inline-block position-relative stretched-link">
+                    <a href="{{ film.id }}" class="d-inline-block position-relative stretched-link">
                         <img src="https://image.tmdb.org/t/p/w185/{{ film.poster_path }}">
                     </a>
                 </div>
@@ -77,7 +77,7 @@
         <div class="multiple-items">
             {% for film in toprated %}
                 <div>
-                    <a href="movies/{{ film.id }}" class="d-inline-block position-relative stretched-link">
+                    <a href="{{ film.id }}" class="d-inline-block position-relative stretched-link">
                         <img src="https://image.tmdb.org/t/p/w185/{{ film.poster_path }}">
                     </a>
                 </div>

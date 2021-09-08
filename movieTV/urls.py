@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('movieTV.apps.core_app.urls')),
     path('language/', include('django.conf.urls.i18n')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

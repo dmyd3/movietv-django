@@ -4,17 +4,17 @@ Django Rest Framework functions
 Serializers and Viewsets for each model
 """
 from rest_framework import serializers, viewsets
-from core_app.models import WebUser
+from core_app.models import User
 
 
-# Serializers define the API representation.
-class WebUserSerializer(serializers.HyperlinkedModelSerializer):
+# Serializers define the API representation..
+class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = WebUser
+        model = User
         fields = ['username', 'email', 'first_name', 'is_superuser']
 
 
 # ViewSets define the view behavior.
-class WebUserViewSet(viewsets.ModelViewSet):
-    queryset = WebUser.objects.all()
-    serializer_class = WebUserSerializer
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer

@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/sidebar.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}"/>
 
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -53,22 +54,29 @@
                     <input class="btn btn-light" type="submit" value="Go">
                 </form>
 
-                <div class="text-end">
-                    <button type="button" class="btn btn-light text-dark me-2">{% trans "Login" %}</button>
-                    <button type="button" class="btn btn-primary">{% trans "Sign-up" %}</button>
-                </div>
+                {% if user.is_authenticated %}
+                    <div class="dropdown text-end"> <!-- Example USER picture - dropdown -->
+                        <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                        </a>
+                        <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+                            <li><a class="dropdown-item" href="#">{% trans "Settings" %}</a></li>
+                            <li><a class="dropdown-item" href="#">{% trans "Profile" %}</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'logout'%}?next={{request.path}}">{% trans "Sign out" %}</a></li>
+                        </ul>
+                    </div>
+                {% else %}
+                    <div class="text-end">
+                        <button type="button" class="btn btn-light me-2">
+                            <a class="text-dark text-decoration-none" href="{% url 'login'%}?next={{request.path}}">{% trans "Login" %}</a>
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                            <a class="text-light text-decoration-none" href="{% url 'core_app:signup' %}?next={{request.path}}">{% trans "Sign-up" %}</a>
+                        </button>
+                    </div>
+                {% endif %}
 
-                <div class="dropdown text-end"> <!-- Example USER picture - dropdown -->
-                    <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
-                    </a>
-                    <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
-                        <li><a class="dropdown-item" href="#">{% trans "Settings" %}</a></li>
-                        <li><a class="dropdown-item" href="#">{% trans "Profile" %}</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">{% trans "Sign out" %}</a></li>
-                    </ul>
-                </div>
             </ul>
             
         </div>
