@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.contrib.auth.decorators import login_required
 import requests, json
 from core_app._env import API_KEY_v3
+from core_app.forms import RegisterForm
 
 
 base_url = 'https://api.themoviedb.org/3/'
@@ -14,6 +16,33 @@ def homepage(request):
     context1 = {}
 
     return render(request, 'home.html', context1)
+
+def signup(request):
+    '''
+        View to register a new user
+    '''
+
+    user_form = RegisterForm(
+        request.POST or None,
+        instance=None
+    )
+
+    if request.method == "POST":
+        print("HELLO POST")
+        if user_form.is_valid():
+            new_user = user_form.save(commit=False)
+            print("HELLO VALID USER")
+            print(new_user)
+            new_user.save()
+
+            return redirect('core_app:home_page')
+
+    context = {
+        'userform': user_form,
+    }
+    print("Hello VIEW")
+
+    return render(request, 'registration/signup.html', context)
 
 def movies(request):
 
@@ -35,3 +64,18 @@ def movies(request):
     }
 
     return render(request, 'movies.html', context)
+
+
+def get_movie_info(request, tmdb_id):
+    '''
+        Returns Individual Movie Info given its ID on TMDB
+    '''
+    
+    film = requests.get(f'{base_url}movie/{tmdb_id}?api_key={api_key}&language={request.LANGUAGE_CODE}').json()
+    
+
+    context = {
+        'film': film,
+        'series': False}
+
+    return render(request, 'individual.html', context)

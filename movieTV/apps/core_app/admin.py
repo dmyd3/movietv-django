@@ -1,5 +1,6 @@
 from django.contrib import admin
-from core_app.models import WebUser
+from core_app.models import User
+from django.contrib.auth.admin import UserAdmin
 
 # # Register your models here.
 # class WebUserAdmin(admin.ModelAdmin):
@@ -8,4 +9,4 @@ from core_app.models import WebUser
 #         )
 
 # Register your models here.
-admin.site.register(WebUser, admin.ModelAdmin)
+admin.site.register(User, UserAdmin)

@@ -7,6 +7,7 @@
     z-index: 1000;
     margin-left: 200px;
     display: inline;
+    transition: all 0.2s linear 0s;
 }
 .fixed-top2.shrunken {margin-left: 100px;}
 body{
@@ -23,6 +24,7 @@ body{
     padding-top: 64px;
     max-width: 100%;
     margin-left: 200px;
+    transition: all 0.2s linear 0s;
 }
 .base-content.shrunken {margin-left: 100px;}
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
@@ -70,4 +72,19 @@ body{
 .slick-slider {
     width: 90%;
     margin-left: 30px;
+}
+
+.dark-overlay {
+    /*width: 100%;*/
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 1;
+  }
+.bg-film-backdrop {
+    background-size: cover;
+    background-repeat: no-repeat;
 }

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+    <div class="container-md text-white bg-film-backdrop" 
+        style="background-image: url('https://image.tmdb.org/t/p/w1280_and_h720_bestv2/{{ film.backdrop_path }}'); 
+        max-width: 100%;">
+        <div class="row dark-overlay">
+            <div class="col-md-4 d-flex justify-content-center p-5">
+                <img class="p-3" src="https://image.tmdb.org/t/p/w300/{{ film.poster_path }}">
+            </div>
+            
+            <div class="col-md-8">
+                <h3 class="">{{ film.title }}</h3>
+                <h6 class=""> {% trans "Original Title" %}: {{ film.original_title }}</h6>
+                <h6 class=""> {% trans "Overview" %}:</h6>
+                <p class="">{{ film.overview }}</p>
+                <p class=""><b>{% trans "Duration" %}:</b> {{ film.runtime }} {% trans "minutes" %}</p>
+            </div>
+        </div>
+    </div>    
+
+{% endblock content %}
