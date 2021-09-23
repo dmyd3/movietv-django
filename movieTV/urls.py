@@ -24,4 +24,5 @@ urlpatterns = [
     path('', include('movieTV.apps.core_app.urls')),
     path('language/', include('django.conf.urls.i18n')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]

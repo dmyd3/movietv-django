@@ -2,14 +2,63 @@
 {% load static %}
 {% load i18n %}
 
-{% block content %}
 
+{% block head %}
+    <script type="text/javascript" src="{% static 'js/movies.js' %}"></script>
+    {{ film|json_script:"film_json" }}
+{% endblock head %}
+
+{% block content %}
     <div class="container-md text-white bg-film-backdrop" 
         style="background-image: url('https://image.tmdb.org/t/p/w1280_and_h720_bestv2/{{ film.backdrop_path }}'); 
         max-width: 100%;">
         <div class="row dark-overlay">
-            <div class="col-md-4 d-flex justify-content-center p-5">
-                <img class="p-3" src="https://image.tmdb.org/t/p/w300/{{ film.poster_path }}">
+            <div class="col-md-4 justify-content-center p-5">
+                
+                <div class="row">
+                    <img class="p-3" src="https://image.tmdb.org/t/p/w300/{{ film.poster_path }}">
+                </div>
+                
+                <div class="row w100">
+                    <div class="btn-group" role="group" aria-label="checkbox button group">
+                        {% if user.is_authenticated %}
+                            {% if watched == False %}
+                                <input type="checkbox" class="btn-check" name="watchMovie" id="btnWatchMovie" autocomplete="off">
+                                <label class="btn btn-outline-primary btn-circle mx-2" for="btnWatchMovie">
+                                    <i class="bi-eye" style="font-size: 2rem; color: white;" aria-label="Watched"></i>
+                                </label>
+                            {% else %}
+                                <input type="checkbox" class="btn-check" name="watchMovie" id="btnWatchMovie" autocomplete="off" checked>
+                                <label class="btn btn-outline-primary btn-circle mx-2" for="btnWatchMovie">
+                                    <i class="bi-eye-fill" style="font-size: 2rem; color: white;" aria-label="Watched"></i>
+                                </label>
+                            {% endif %}
+
+                            {% if favorited == False %}
+                                <input type="checkbox" class="btn-check" name="favMovie" id="btnFavMovie" autocomplete="off">
+                                <label class="btn btn-outline-success btn-circle mx-2" for="btnFavMovie">
+                                    <i class="bi-heart" style="font-size: 2rem; color: white;" aria-label="Favorited"></i>
+                                </label>
+                            {% else %}
+                                <input type="checkbox" class="btn-check" name="favMovie" id="btnFavMovie" autocomplete="off" checked>
+                                <label class="btn btn-outline-success btn-circle mx-2" for="btnFavMovie">
+                                    <i class="bi-heart-fill" style="font-size: 2rem; color: white;" aria-label="Favorited"></i>
+                                </label>
+                            {% endif %}
+                        {% else %}
+                            <input type="checkbox" class="btn-check" id="btnWatchMovie" autocomplete="off" disabled>
+                            <label class="btn btn-outline-secondary btn-circle mx-2" for="btnWatchMovie">
+                                <i class="bi-eye" style="font-size: 2rem" aria-label="Watched"></i>
+                            </label>
+
+                            <input type="checkbox" class="btn-check" id="btnFav" autocomplete="off" disabled>
+                            <label class="btn btn-outline-secondary btn-circle mx-2" for="btnFav">
+                                <i class="bi-heart" style="font-size: 2rem" aria-label="Favorited"></i>
+                            </label>
+                        {% endif %}
+                    </div>
+                </div>
+            
             </div>
             
             <div class="col-md-8">
@@ -20,6 +69,9 @@
                 <p class=""><b>{% trans "Duration" %}:</b> {{ film.runtime }} {% trans "minutes" %}</p>
             </div>
         </div>
-    </div>    
+    </div>
 
+    <form id="movie_data" hidden>
+        {% csrf_token %}
+    </form>
 {% endblock content %}

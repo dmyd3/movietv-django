@@ -39,6 +39,18 @@
                         {% endif %}
                     </div>
 
+                    <div class="col-12">
+                        <label>{% trans 'Select your avatar picture' %}</label>
+                        {% render_field userform.custom_avatar_path class='form-control form-select' %}
+                        {% if userform.custom_avatar_path.errors %}
+                            <label class="alert alert-danger">
+                                <ul>
+                                    {% for error in userform.custom_avatar_path.errors %}<li>{{error}}</li>{% endfor %}
+                                </ul>
+                            </label>
+                        {% endif %}
+                    </div>
+
                     <div class="col-sm-6">
                         {% render_field userform.first_name placeholder=userform.first_name.label class='form-control' %}
                         {% if userform.first_name.errors %}

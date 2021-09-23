@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 {% comment %} {% load i18n static %} {% endcomment %}
 {% load static %}
 {% load i18n %}
+
 
 <head>
     <link rel="shortcut icon" href="#"> <!-- solve the "favicon Not Found" error -->    
@@ -19,6 +21,9 @@
     <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/base.js' %}"></script>
     <script type="module" src="{% static 'js/tmdb_api.js' %}"></script>
+
+    {% block head %}
+    {% endblock head %}
 </head>
 
 <body>
@@ -61,7 +66,7 @@
                         </a>
                         <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
                             <li><a class="dropdown-item" href="#">{% trans "Settings" %}</a></li>
-                            <li><a class="dropdown-item" href="#">{% trans "Profile" %}</a></li>
+                            <li><a class="dropdown-item" href="{% url 'core_app:my_profile'%}">{% trans "Profile" %}</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="{% url 'logout'%}?next={{request.path}}">{% trans "Sign out" %}</a></li>
                         </ul>
@@ -131,7 +136,11 @@
         </ul>
         <hr>
 
-        <i class="bi-person-circle" style="font-size: 2rem" aria-label="HOME"></i>
+        <b class="p-2">
+            <i class="bi-person-circle" style="font-size: 2rem" aria-label="HOME"></i>
+            {{ request.user }}
+        </b>
+            
     </div>
 
     <div class="base-content">

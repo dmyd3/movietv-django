@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+    <div class="container-md text-white bg-film-backdrop" 
+        style="background-image: url('https://image.tmdb.org/t/p/w1280_and_h720_bestv2/{{ film.backdrop_path }}');
+        max-width: 100%;">
+        <div class="row dark-overlay">
+            <div class="col-md-4 d-flex justify-content-center p-5">
+                <img class="rounded-circle p-2" src="{{ user.avatar_path }}" alt="mdo" width="256" height="256">
+            </div>
+            
+            <div class="col-md-8">
+                <h3 class="">{{ user.first_name }}</h3>
+                <h6 class=""> {% trans "Full Name" %}: {{ user.get_full_name }}</h6>
+                <p class=""><b>{% trans "Total Watch Time" %}:</b> {{ user.watch_time }} {% trans "minutes" %}</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

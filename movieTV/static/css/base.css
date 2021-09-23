@@ -21,7 +21,7 @@ body{
 }
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 .base-content {
-    padding-top: 64px;
+    padding-top: 80px;
     max-width: 100%;
     margin-left: 200px;
     transition: all 0.2s linear 0s;
@@ -87,4 +87,11 @@ body{
 .bg-film-backdrop {
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+.btn-circle {
+    padding: 6px 6px;
+    border-radius: 25px !important;
+    font-size: 8px;
+    text-align: center;
 }
