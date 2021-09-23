@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-31 00:54-0300\n"
+"POT-Creation-Date: 2021-09-21 21:36-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,63 +17,83 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: movieTV/apps/core_app/models.py:20 movieTV/templates/base.html:99
-msgid "Movies"
+#: movieTV/apps/core_app/models.py:21 movieTV/templates/individual.html:66
+msgid "Original Title"
+msgstr "Título Original"
+
+#: movieTV/apps/core_app/models.py:26
+msgid "Release Year"
+msgstr "Ano de Lançamento"
+
+#: movieTV/apps/core_app/models.py:30 movieTV/templates/individual.html:69
+msgid "Duration"
+msgstr "Duração"
+
+#: movieTV/apps/core_app/models.py:34
+msgid "TMDB ID"
+msgstr "ID no TMDB"
+
+#: movieTV/apps/core_app/models.py:36
+msgid "ID in The Movie DataBase"
+msgstr "ID no banco de dados do TMDB"
+
+#: movieTV/apps/core_app/models.py:45
+#, fuzzy
+#| msgid "Trending Movies"
+msgid "Used Movie"
+msgstr "Filmes em Tendência"
+
+#: movieTV/apps/core_app/models.py:46
+#, fuzzy
+#| msgid "Movies"
+msgid "Used Movies"
 msgstr "Filmes"
 
-#: movieTV/apps/core_app/models.py:21
-msgid "Movies Watched"
-msgstr "Filmes Assistidos"
+#: movieTV/apps/core_app/models.py:57
+#, fuzzy
+#| msgid "Profile"
+msgid "Profile Avatar"
+msgstr "Perfil"
 
-#: movieTV/apps/core_app/models.py:22
+#: movieTV/apps/core_app/models.py:64
 msgid "Movies that the user have watched"
 msgstr "Filmes que o usuário assistiu"
 
-#: movieTV/apps/core_app/models.py:27
+#: movieTV/apps/core_app/models.py:71
+#, fuzzy
+#| msgid "Movies that the user have watched"
+msgid "Movies that the user have as favorites"
+msgstr "Filmes que o usuário assistiu"
+
+#: movieTV/apps/core_app/models.py:77
+#, fuzzy
+#| msgid "Movies Watched"
+msgid "Total Movies Watchtime"
+msgstr "Filmes Assistidos"
+
+#: movieTV/apps/core_app/models.py:78
+msgid "Total sum of time watching movies"
+msgstr "Soma total do tempo assistindo filmes"
+
+#: movieTV/apps/core_app/models.py:83
 msgid "TV Shows"
 msgstr "Séries de TV"
 
-#: movieTV/apps/core_app/models.py:28
+#: movieTV/apps/core_app/models.py:84
 msgid "Shows Watched"
 msgstr "Séries Assistidas"
 
-#: movieTV/apps/core_app/models.py:29
+#: movieTV/apps/core_app/models.py:85
 msgid "Shows that the user have watched"
 msgstr "Séries que o usuário assistiu"
 
-#: movieTV/apps/core_app/models.py:36
-msgid "groups"
-msgstr ""
-
-#: movieTV/apps/core_app/models.py:39
-msgid ""
-"The groups this user belongs to. A user will get all permissions granted to "
-"each of their groups."
-msgstr ""
-
-#: movieTV/apps/core_app/models.py:47
-msgid "user permissions"
-msgstr ""
-
-#: movieTV/apps/core_app/models.py:49
-msgid "Specific permissions for this user."
-msgstr ""
-
-#: movieTV/settings.py:132
+#: movieTV/settings.py:142
 msgid "English"
 msgstr "Inglês"
 
-#: movieTV/settings.py:133
+#: movieTV/settings.py:143
 msgid "Portuguse-Brazil"
 msgstr "Português-Brasil"
-
-#: movieTV/templates/base.html:61
-msgid "Login"
-msgstr ""
-
-#: movieTV/templates/base.html:62
-msgid "Sign-up"
-msgstr "Cadastrar"
 
 #: movieTV/templates/base.html:70
 msgid "Settings"
@@ -87,30 +107,79 @@ msgstr "Perfil"
 msgid "Sign out"
 msgstr "Sair"
 
-#: movieTV/templates/base.html:105
+#: movieTV/templates/base.html:79
+msgid "Login"
+msgstr "Entrar"
+
+#: movieTV/templates/base.html:82
+msgid "Sign-up"
+msgstr "Cadastrar"
+
+#: movieTV/templates/base.html:110
+msgid "Movies"
+msgstr "Filmes"
+
+#: movieTV/templates/base.html:116
 msgid "TV Series"
 msgstr "Séries de TV"
 
-#: movieTV/templates/base.html:111
+#: movieTV/templates/base.html:122
 msgid "Search"
 msgstr "Procurar"
 
-#: movieTV/templates/movies.html:23
+#: movieTV/templates/individual.html:67
+msgid "Overview"
+msgstr "Sinopse"
+
+#: movieTV/templates/individual.html:69 movieTV/templates/profile_self.html:19
+msgid "minutes"
+msgstr "minutos"
+
+#: movieTV/templates/movies.html:24
 msgid "Trending Movies"
 msgstr "Filmes em Tendência"
 
-#: movieTV/templates/movies.html:36
+#: movieTV/templates/movies.html:37
 msgid "Popular Movies"
 msgstr "Filmes Populares"
 
-#: movieTV/templates/movies.html:49
+#: movieTV/templates/movies.html:50
 msgid "Popular Streaming Movies"
 msgstr "Filmes Populares no Streaming"
 
-#: movieTV/templates/movies.html:62
+#: movieTV/templates/movies.html:63
 msgid "Popular Cinema Movies"
 msgstr "Popular no Cinema"
 
-#: movieTV/templates/movies.html:75
+#: movieTV/templates/movies.html:76
 msgid "Top Rated Movies"
 msgstr "Filmes com as Maiores Notas"
+
+#: movieTV/templates/profile_self.html:18
+msgid "Full Name"
+msgstr "Nome Completo"
+
+#: movieTV/templates/profile_self.html:19
+msgid "Total Watch Time"
+msgstr "Temtpo total assistindo"
+
+#: movieTV/templates/registration/login.html:12
+#: movieTV/templates/registration/signup.html:12
+msgid "Please insert your info bellow"
+msgstr "Por favor insira suas informações abaixo"
+
+#: movieTV/templates/registration/login.html:23
+msgid "Your username and password didn't match. Please try again."
+msgstr "Seu nome de usuário e senha não correspondem. Tente de novo."
+
+#: movieTV/templates/registration/login.html:32
+msgid "Please login to see this page."
+msgstr "Por favor entre para ver essa página"
+
+#: movieTV/templates/registration/login.html:61
+msgid "Lost password?"
+msgstr "Perdeu a senha?"
+
+#: movieTV/templates/registration/signup.html:43
+msgid "Select your avatar picture"
+msgstr "Seleciona sua foto de perfil"

@@ -128,9 +128,9 @@ dmypy.json
 *.log
 *.pot
 *.pyc
-__pycache__/
 .vscode
 .idea
 .DS_Store
 env.js
 _env.py
+migrations/
